@@ -59,7 +59,7 @@ Router.patch("/verify", async (req, res) => {
       { otp },
       { $set: { isverify: true } }
     );
-    res.status(200).json(userVerify);
+    res.status(200).json({userVerify,msg:true});
   } catch (error) {
     res.status(400).json({ err: error });
   }
